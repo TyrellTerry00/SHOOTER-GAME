@@ -14,6 +14,7 @@ x = 200
 y = 200
 img = pygame.image.load('C:\Users\tyrel\PycharmProjects\HelloWorld\SHOOTER  GAME\Shooter-main\Shooter-main\img\player\Idle\0.png')
 rect = img.get_rect()
+rect.center = (x,y)
 
 
 run = True
