@@ -218,7 +218,12 @@ class Grenade(pygame.sprite.Sprite):
           # check collision with floor
           if self.rect.bottom + dy > 300:
               dy = 300 - self.rect.bottom
+              self.speed = 0
 
+          # check collision with walls
+          if self.rect.left + dx < 0 or self.rect.right + dx > SCREEN_WIDTH:
+              self.direction *= -1
+              dx = self.direction * self.speed
           #update grenade position
           self.rect.x += dx
           self.rect.y += dy
